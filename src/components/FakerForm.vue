@@ -3,7 +3,7 @@
     <v-dialog
     v-model="dialog"
     width="500"
-    >
+    >   
         <template v-slot:activator="{ on, attrs }">
         <v-btn
           color="primary lighten-2"
@@ -22,8 +22,8 @@
           <v-subheader class="font-weight-bold">Select Fields:</v-subheader>
           <v-card-text class="mb-2">
             <v-select
-              v-model="payload.selectedColumns"
-              :items="columns"
+              v-model="selectedColumns"
+              :items="$store.getters.columns"
               multiple
               chips
               hint="Pick the columns for your dataset"
@@ -35,7 +35,7 @@
           >
           <v-card-text>
             <v-slider
-              v-model="payload.numRows"
+              v-model="numRows"
               step="10"
               max="200"
               class=""
@@ -47,7 +47,7 @@
             <v-btn 
             color="success"
             class="mr-4"
-            @click="generateData;dialog = false;"
+            @click="addColumnLocal"
             >
               Generate Data
             </v-btn>
@@ -64,26 +64,43 @@
         </v-form>
       </v-card>
     </v-dialog>
+   <!-- <h1>{{selectedColumns}}</h1> -->
   </div>
 </template>
 <script>
+import { bus } from '../main';
+
+class Person {
+  constructor() {
+    this.firstname = this.$faker()
+  }
+}
+
 export default {
   name: "FakerForm",
   data() {
     return {
         dialog: false,
-        columns: ["Fist Name", "Last Name", "Title", "Company", "Phone Number"],
-        payload: {
-        selectedColumns: [],
         numRows: 10,
-      },
-    };
+        payload:{
+          selectedColumns: [],
+          items: []
+          }
+    } 
   },
   methods: {
     reset() {
-      this.payload.selectedColumns = [];
-      this.payload.numRows = 10;
+      this.selectedColumns = [];
+      this.numRows = 10;
     },
+    addColumnLocal(){
+      //this.$emit('selected-columns', this.selectedColumns);
+      
+      bus.$emit('selected-columns', this.payload);
+      this.dialog = false;
+      this.payload.selectedColumns = [];
+      this.numRows = 10;
+    }
   },
   computed: {
     addTable() {

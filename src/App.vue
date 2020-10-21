@@ -8,7 +8,7 @@
     <!-- Sizes your content based upon application components -->
     <v-main>
       <!-- Provides the application the proper gutter -->
-      <v-container fluid>
+      <v-container fluid @>
         <!-- If using vue-router -->
         <router-view></router-view>
       </v-container>
@@ -21,7 +21,8 @@
 </template>
 
 <script>
-import Sidemenu from './components/SideMenu.vue'
+import { bus } from './main';
+import Sidemenu from './components/SideMenu.vue';
 
 export default {
   name: "App",
@@ -33,5 +34,10 @@ export default {
   data: () => ({
     //
   }),
+  methods: {
+    testing(){
+      console.log("Hi desde app")
+    }
+  }
 };
 </script>
