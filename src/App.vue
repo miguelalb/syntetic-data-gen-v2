@@ -1,12 +1,10 @@
 <template>
   <v-app>
     <Sidemenu></Sidemenu>
-    <v-app-bar app>
-      <!-- -->
-    </v-app-bar>
+    <navigation-bar></navigation-bar>
 
     <!-- Sizes your content based upon application components -->
-    <v-main>
+    <v-main style="background: linear-gradient(to bottom, #81D4FA, #E0F2F1)">
       <!-- Provides the application the proper gutter -->
       <v-container fluid @>
         <!-- If using vue-router -->
@@ -23,12 +21,14 @@
 <script>
 import { bus } from './main';
 import Sidemenu from './components/SideMenu.vue';
+import NavigationBar from './components/NavigationBar.vue'
 
 export default {
   name: "App",
 
   components: {
-    Sidemenu
+    Sidemenu,
+    NavigationBar
   },
 
   data: () => ({
@@ -41,3 +41,6 @@ export default {
   }
 };
 </script>
+<style>
+
+</style>

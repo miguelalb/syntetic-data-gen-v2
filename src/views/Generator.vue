@@ -1,19 +1,14 @@
 <template>
   <v-container class="d-flex justify-center"> 
-    <div class="col-sm-5">
-    <v-row>
-      <v-col >
-        <faker-form></faker-form><br>
-      <v-card>
-        <tables  :headers="selectedColumns"></tables>
-      </v-card>
-      <!-- <button @click="columnsSelected">Hola</button> -->
-      <br><br>
-      <v-btn
-      @click="fakeTest"
-      >Test Faker</v-btn>
-      </v-col>
-    </v-row></div>
+    <div class="col-sm-6">
+      <v-row>
+        <v-col>
+          <faker-form></faker-form>
+          <br>
+          <tables></tables>
+        </v-col>
+      </v-row>
+    </div>
   </v-container>
 </template>
 <script>
@@ -25,18 +20,12 @@ export default {
   name: "Generator",
   components:{
     FakerForm,
-    Tabless
+    Tables
   },
   data(){
       return {
-          dialog: false,
-          selectedColumns: []
       }
-  },
-  methods: {
-    fakeTest(){
-      console.log(this.$faker().name.firstName());
-    }
   }
+  
 };
 </script>
