@@ -2,7 +2,7 @@
     <div>
         <v-app-bar app
         absolute
-        style="background: linear-gradient(to right, #01579B, #26A69A)"
+        id="top-bar"
         dark
         dense
         >
@@ -16,3 +16,8 @@ export default {
     name: 'NavigationBar'
 }
 </script>
+<style>
+    #top-bar {
+        background: linear-gradient(to right, #9bc693, #939bc6);
+    }
+</style>

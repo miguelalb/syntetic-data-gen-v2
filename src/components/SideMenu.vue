@@ -1,8 +1,8 @@
 <template>
   <v-card>
     <v-navigation-drawer app 
-    permanent 
-    style="background: linear-gradient(to bottom, #01579B, #26A69A)"
+    permanent
+    id="nav-menu" 
     >
       <v-list>
         <v-list-item class="px-2">
@@ -25,32 +25,32 @@
       <br />
 
       <v-list nav dense>
+        <router-link to="/" tag="button">
         <v-list-item link class="mb-4">
-          <v-btn color="success" x-small fab>
+          <v-btn class="menu-btn" color="success" x-small fab>
             <v-icon>home</v-icon>
           </v-btn>
-          <router-link to="/" tag="button" class="title pl-2"
-            >Home</router-link
-          >
-        </v-list-item>
+          <div tag="button" class="title pl-2"
+            >Home</div>
+        </v-list-item></router-link>
         
-        <v-list-item link class="mb-4">
-          <v-btn color="success" x-small fab>
+        <router-link to="/generator" tag="button">
+          <v-list-item link class="mb-4">
+          <v-btn class="menu-btn" color="success" x-small fab>
             <v-icon>mdi-database-refresh</v-icon>
           </v-btn>
-          <router-link to="/generator" tag="button" class="title pl-2"
-            >Generate Data</router-link
-          >
-        </v-list-item>
+          <div tag="button" class="title pl-2"
+            >Generate Data</div></v-list-item>
+        </router-link>
 
+        <router-link to="/text-editor" tag="button">
         <v-list-item link class="mb-4">
-          <v-btn color="success" x-small fab>
+          <v-btn class="menu-btn" color="success" x-small fab>
             <v-icon>text_format</v-icon>
           </v-btn>
-          <router-link to="textEditor" tag="button" class="title pl-2"
-            >Create Document</router-link
-          >
-        </v-list-item>
+          <div class="title pl-2"
+            >Create Document</div>
+        </v-list-item></router-link>
       </v-list>
       <!-- -->
     </v-navigation-drawer>
@@ -69,3 +69,10 @@ export default {
   methods: {},
 };
 </script>
+<style>
+  #nav-menu {
+    background: linear-gradient(to bottom, #9bc693, #939bc6);
+  }
+
+  
+</style>

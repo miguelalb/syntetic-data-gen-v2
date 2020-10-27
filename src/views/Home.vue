@@ -3,8 +3,8 @@
     <v-row justify="center">
       <v-col>
         <!-- LEFT CHART -->
-        <v-card class="mx-auto text-center" 
-        color= "#26A69A"
+        <v-card class="chart mx-auto text-center" 
+        :color="chartColor"
         dark
         max-width="500">
           <v-card-text>
@@ -45,7 +45,7 @@
       <v-col>
         <!-- RIGHT CHART -->
         <v-card class="mx-auto text-center" 
-        color= "#26A69A"
+        :color="chartColor"
         dark
         max-width="500">
           <v-card-text>
@@ -92,9 +92,10 @@
         <!-- BOTTOM CHART -->
         <v-card 
         class="mx-auto text-center"
-        color="#26A69A"
+        :color="chartColor"
         dark
-        max-width="1200"
+        max-width="900"
+        max-height="500"
         >
         <v-card-text>
           <v-sheet
@@ -163,6 +164,7 @@ export default {
   },
   data () {
     return {
+      chartColor:"indigo",
       value1: [423,446,675,510,590,610,760],
       width: 2,
       radius: 10,
@@ -196,3 +198,7 @@ export default {
   }
 }
 </script>
+
+<style>
+  
+</style>

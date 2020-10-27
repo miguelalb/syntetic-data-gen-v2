@@ -10,6 +10,8 @@ Vue.use(require('vue-faker'));
 
 export const bus = new Vue();
 
+
+
 new Vue({
   router,
   store,

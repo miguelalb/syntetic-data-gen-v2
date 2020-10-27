@@ -4,7 +4,7 @@
     <navigation-bar></navigation-bar>
 
     <!-- Sizes your content based upon application components -->
-    <v-main style="background: linear-gradient(to bottom, #81D4FA, #E0F2F1)">
+    <v-main id="main" >
       <!-- Provides the application the proper gutter -->
       <v-container fluid @>
         <!-- If using vue-router -->
@@ -42,5 +42,7 @@ export default {
 };
 </script>
 <style>
-
+  #main {
+    background: linear-gradient(to bottom, #CFD8DC, #E0F2F1)
+  }
 </style>
