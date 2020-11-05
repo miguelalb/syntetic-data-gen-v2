@@ -1,22 +1,31 @@
 <template>
-  <v-container color="blue">
-    <v-row justify="center">
-      <faker-form></faker-form>
-    </v-row>
+  <v-container class="d-flex justify-center"> 
+    <div class="col-sm-6">
+      <v-row>
+        <v-col>
+          <faker-form></faker-form>
+          <br>
+          <tables></tables>
+        </v-col>
+      </v-row>
+    </div>
   </v-container>
 </template>
 <script>
 import FakerForm from "../components/FakerForm.vue"
+import Tables from "../components/Table.vue"
+import { bus } from '../main';
 
 export default {
   name: "Generator",
   components:{
-    FakerForm
+    FakerForm,
+    Tables
   },
   data(){
       return {
-          dialog: false
       }
   }
+  
 };
 </script>

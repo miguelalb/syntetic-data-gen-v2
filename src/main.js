@@ -8,6 +8,10 @@ import 'material-design-icons-iconfont/dist/material-design-icons.css'
 Vue.config.productionTip = false
 Vue.use(require('vue-faker'));
 
+export const bus = new Vue();
+
+
+
 new Vue({
   router,
   store,
